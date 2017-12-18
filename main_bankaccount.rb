@@ -1,9 +1,13 @@
 require './bankaccount.rb'
 
-my_account = Bankaccount.create("danny")
-your_account = Bankaccount.create("Josh")
+danny = Bankaccount.create("Danny", 0)
+josh = Bankaccount.create("Josh", 0)
 
-p my_account
-p your_account
+p Bankaccount.total_funds
 
-p Bankaccount.accounts
+danny.deposit(1000)
+p danny
+josh.deposit(500)
+p josh
+
+p Bankaccount.total_funds

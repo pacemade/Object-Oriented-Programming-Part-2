@@ -48,3 +48,11 @@ project[:steps].each do |committee|
       delegated = 0
     end
 end
+
+OR
+
+
+project[:steps].each do |committee|
+    committee[:person] = project[:committee].first
+    project[:committee].rotate!
+end
