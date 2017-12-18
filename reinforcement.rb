@@ -39,13 +39,12 @@ project = {
 # and each committee member has an equal number of tasks.
 # Avoid typing out the committee members' names elsewhere in your code.
 
+delegated = 0
+
 project[:steps].each do |committee|
-  project[:committee].each do |name|
-    committee[:person] = name
-  end
+    committee[:person] = project[:committee][delegated]
+    delegated += 1
+    if delegated == 2
+      delegated = 0
+    end
 end
-
-
-
-
-project[:committee] = stella, selma, kai
