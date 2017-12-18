@@ -11,3 +11,7 @@ josh.deposit(500)
 p josh
 
 p Bankaccount.total_funds
+
+Bankaccount.interest_time
+
+p Bankaccount.total_funds

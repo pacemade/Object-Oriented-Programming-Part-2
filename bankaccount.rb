@@ -1,6 +1,6 @@
 class Bankaccount
 
-    @@interest_rate = 5
+    @@interest_rate = 0.05
     @@accounts = []
 
     def initialize(name, balance)
@@ -30,13 +30,18 @@ class Bankaccount
       return @@accounts
     end
 
-
     def self.total_funds
       total = 0
-      @@accounts[1].balance + @@accounts[0].balance
-      # @@accounts[1] each do |balance|
-      #   total += balance
-      # end
+      @@accounts.each do |account|
+        total += account.balance
+      end
+      return total
+    end
+
+    def self.interest_time
+      @@accounts.each do |account|
+        account.deposit(account.balance * @@interest_rate)
+      end  
     end
 
 end
